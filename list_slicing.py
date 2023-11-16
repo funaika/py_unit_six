@@ -8,30 +8,29 @@ def main():
     # Answer print(names[0:3])
 
     # 1. Print ['Doug', 'Emma']
+    print(names[3:5])
 
 
 
     # 2. Print [‘Brenda’, ‘Chad’, ‘Doug’, ‘Emma’, ‘Francis’]
-
+    print(names[1:6])
 
 
     # 3. [‘Francis’, ‘George’, ‘Harold’, ‘Imogen’, ‘Jackie’, ‘Kurt’, ‘Linda’] (using two numbers in the slice)
-
+    print(names[5:12])
 
     # 4. [‘Francis’, ‘George’, ‘Harold’, ‘Imogen’, ‘Jackie’, ‘Kurt’, ‘Linda’] (using one number in the slice)
-
+    print(names[5:])
 
 
     # 5. [‘Linda’] (using a positive number)
-
+    print(names[11])
 
     # 6. [‘Linda’] (using a negative number)
-
+    print(names[-1])
 
 
     # 7. [‘Brenda’, ‘Doug’, ‘Francis’, ‘Harold’]
-
-
 
     # 8. [‘Abigail’, ‘Chad’, ‘Emma’, ‘George’, ‘Imogen’, ‘Kurt’]
 
