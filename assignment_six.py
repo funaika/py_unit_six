@@ -9,12 +9,12 @@ def readFile(fileName):
     :return: return empty list
     '''
     try:
-        with open(fileName, "r") as file:                   #
-            lines = file.readlines()                        #
-            return lines                                    #
-    except FileNotFoundError:                               #
-        print("File not found.")                            #
-        return []                                           #
+        with open(fileName, "r") as file:                   #opens file named
+            lines = file.readlines()                        #reads all lines from file and puts them in list called lines
+            return lines
+    except FileNotFoundError:                               #exception for is file is not found
+        print("File not found.")
+        return []                                           #returns list
 
 
 def countLines(lines):
@@ -23,7 +23,7 @@ def countLines(lines):
     :param lines: use param of number of lines in file
     :return: number of lines in file
     '''
-    return len(lines)                                       #
+    return len(lines)                                       #calculate and return length of lines variable
 
 def countWords(lines):
     '''
@@ -31,11 +31,11 @@ def countWords(lines):
     :param lines: use lines to find number of words in sequence
     :return: number of words in file
     '''
-    totalWords = 0                                          #
-    for line in lines:                                      #
-        words = line.split()                                #
-        totalWords += len(words)                            #
-    return totalWords                                       #
+    totalWords = 0                                          #set base to 0
+    for line in lines:
+        words = line.split()                                #splits lines into words
+        totalWords += len(words)                            #keeping count of words
+    return totalWords
 
 def countCharacters(lines):
     '''
@@ -43,31 +43,31 @@ def countCharacters(lines):
     :param lines: use words to find number of characters in sequence
     :return: number of characters in file
     '''
-    totalCharacters = 0                                     #
-    for line in lines:                                      #
-        words = line.split()                                #
-        for word in words:                                  #
-            totalCharacters += len(word)                    #
-    return totalCharacters                                  #
+    totalCharacters = 0
+    for line in lines:
+        words = line.split()                                #splits words to characters
+        for word in words:
+            totalCharacters += len(word)                    #keeping count of characters
+    return totalCharacters
 
 def main():
     '''
     print number of lines words and characters
     :return: return main()
     '''
-    fileName = "intro_lists.py"                             #input name of file
+    fileName = "intro_lists.py"                             #input file
 
-    lines = readFile(fileName)                              #def lines in file
+    lines = readFile(fileName)                              #def lines opening and reading from input file
 
-    if lines:
-        numLines = countLines(lines)                        #get total lines
-        numWords = countWords(lines)                        #get total words
-        numCharacters = countCharacters(lines)              #get total characters
+    if lines:                                               #if statement used for what to print and to make sure file is valid
+        numLines = countLines(lines)
+        numWords = countWords(lines)
+        numCharacters = countCharacters(lines)
 
-        print("Lines:", numLines)                           #print number of lines
-        print("Words:", numWords)                           #print number of words
-        print("Characters:", numCharacters)                 #print number of characters
-    else:
-        print("Cannot analyze.")                            #print it cannot analyze if it cannot analyze file
+        print("Lines:", numLines)
+        print("Words:", numWords)
+        print("Characters:", numCharacters)
+    else:                                                   #else statement used for if document is not able to be analyzed
+        print("Cannot analyze.")
 
-main()                                                      #run main function
+main()
